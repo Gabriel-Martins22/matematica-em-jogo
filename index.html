@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alex na Cidade — Matemática em Jogo</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- HUD -->
+  <div id="hud">
+    <div class="hud-box"><span>CAP</span><b id="hudCap">1</b></div>
+    <div class="hud-box"><span>DESAFIO</span><b id="hudDone">0/15</b></div>
+    <div class="hud-box"><span>PONTOS</span><b id="hudScore" class="gold">0</b></div>
+    <div class="hud-box"><span>PISTAS</span><b id="hudClues" class="pink">0/3</b></div>
+  </div>
+
+  <!-- Canvas do jogo -->
+  <canvas id="game"></canvas>
+
+  <!-- Minimapa -->
+  <canvas id="mini" width="140" height="140"></canvas>
+
+  <!-- Bússola -->
+  <canvas id="compass" width="80" height="80"></canvas>
+
+  <!-- Hint de interação -->
+  <div id="hint"></div>
+
+  <!-- Controles -->
+  <div id="controls">WASD mover · E interagir · F carro · Shift correr</div>
+
+  <!-- Tela título -->
+  <div id="screen-title" class="screen show">
+    <div class="screen-card">
+      <h1>ALEX NA CIDADE</h1>
+      <p class="sub">Matemática em Jogo — Cavalieri &amp; Ladrilhamento</p>
+      <div class="facts">
+        <span>🎮 WASD</span><span>📐 15 desafios</span><span>🚗 carro</span><span>🏁 2 finais</span>
+      </div>
+      <button id="btn-start" class="btn-main">▶ COMEÇAR</button>
+    </div>
+  </div>
+
+  <!-- Tela história -->
+  <div id="screen-story" class="screen">
+    <div class="screen-card">
+      <span id="storyTag" class="tag">CAPÍTULO 1</span>
+      <h2 id="storyTitle"></h2>
+      <p id="storyText"></p>
+      <div id="storyExtra" class="extra"></div>
+      <button id="btn-story" class="btn-main">CONTINUAR →</button>
+    </div>
+  </div>
+
+  <!-- Tela desafio -->
+  <div id="screen-challenge" class="screen">
+    <div class="screen-card wide">
+      <div class="meta"><span id="chNum"></span> · <span id="chFmt"></span></div>
+      <span id="chCap" class="tag gold"></span>
+      <h2 id="chQ"></h2>
+      <div id="chOpts"></div>
+      <div id="chFb" class="fb"></div>
+      <div class="row-end">
+        <button id="btn-answer" class="btn-main" disabled>CONFIRMAR</button>
+        <button id="btn-next" class="btn-main hidden">CONTINUAR →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tela decisão -->
+  <div id="screen-decision" class="screen">
+    <div class="screen-card">
+      <span class="tag pink">DECISÃO</span>
+      <h2 id="dcTitle"></h2>
+      <p id="dcText"></p>
+      <div id="dcOpts" class="dec-grid"></div>
+    </div>
+  </div>
+
+  <!-- Tela fim -->
+  <div id="screen-end" class="screen">
+    <div class="screen-card center">
+      <span id="endTag" class="tag"></span>
+      <h2 id="endTitle"></h2>
+      <p id="endText"></p>
+      <div id="endStats" class="stats"></div>
+      <button id="btn-replay" class="btn-main">JOGAR NOVAMENTE</button>
+    </div>
+  </div>
+
+</div>
+<script src="game.js"></script>
+</body>
+</html>
